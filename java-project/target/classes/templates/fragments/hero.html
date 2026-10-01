@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<body>
+<section th:fragment="hero" id="home" class="hero">
+    <div class="container hero-grid">
+        <div class="hero-image-wrap">
+            <img th:src="${heroImage}" alt="Business professionals"/>
+        </div>
+        <div class="hero-content">
+            <h1 class="hero-title">LET'S START<br/>BUSINESS HERE</h1>
+            <div class="hero-divider">
+                <span class="dot"></span><span class="dot"></span><span class="dot"></span>
+                <span class="line"></span>
+            </div>
+            <p class="hero-desc">
+                Welcome to <strong>SVR IT Software Solutions</strong>, your trusted partner for
+                <strong>Software Development, IT Support &amp;</strong> IT Staffing and Consulting Services across the USA and India.
+            </p>
+            <a href="#contact" class="btn btn-cyan">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                <span class="underline-text">Let's Meet</span>
+            </a>
+        </div>
+    </div>
+</section>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<body>
+<section th:fragment="dreams" class="dreams-section">
+    <div class="container">
+        <div class="section-header">
+            <h2 class="section-title purple">Making Dreams And Aspirations Come True</h2>
+            <p class="section-desc">
+                Partner with SVR IT Software Solutions and experience the difference that professional IT staffing and consulting can make. Let us help you achieve your business goals with our reliable, efficient, and cost-effective solutions.
+            </p>
+        </div>
+
+        <div class="dreams-grid">
+            <div class="progress-wrap">
+                <div th:each="stat : ${dreamStats}" class="progress-item">
+                    <div class="progress-circle" th:attr="data-value=${stat.value}">
+                        <svg width="170" height="170">
+                            <circle cx="85" cy="85" r="79" stroke="#e5e7eb" stroke-width="12" fill="none"/>
+                            <circle class="progress-ring" cx="85" cy="85" r="79" stroke="#00b4f0" stroke-width="12" fill="none"
+                                    stroke-linecap="round" stroke-dasharray="496.37" stroke-dashoffset="496.37"/>
+                        </svg>
+                        <span class="progress-value">0%</span>
+                    </div>
+                    <p class="progress-label" th:text="${stat.label}">Label</p>
+                </div>
+            </div>
+            <div class="dream-images">
+                <img th:each="img, iter : ${dreamImages}" th:src="${img}" alt="team"
+                     th:class="${iter.index == 1} ? 'dream-img offset' : 'dream-img'"/>
+            </div>
+        </div>
+    </div>
+</section>
+</body>
+</html>

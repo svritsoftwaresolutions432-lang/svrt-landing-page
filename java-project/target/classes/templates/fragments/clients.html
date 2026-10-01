@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<body>
+<section th:fragment="clients" class="clients-section">
+    <div class="container">
+        <div class="section-header">
+            <h2 class="section-title purple">Our Clients</h2>
+            <p class="section-desc">We are proud to associate with world leaders!</p>
+        </div>
+        <div class="marquee">
+            <div class="marquee-track">
+                <div th:each="logo : ${clientLogos}" class="client-logo">
+                    <img th:src="${logo.url}" th:alt="${logo.name}"/>
+                </div>
+                <div th:each="logo : ${clientLogos}" class="client-logo">
+                    <img th:src="${logo.url}" th:alt="${logo.name}"/>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>SVR IT Software Solutions – IT Staffing &amp; Consulting</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com"/>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet"/>
+    <link rel="stylesheet" th:href="@{/css/styles.css}"/>
+</head>
+<body>
+
+<div th:replace="~{fragments/header :: header}"></div>
+<div th:replace="~{fragments/hero :: hero}"></div>
+<div th:replace="~{fragments/about :: about}"></div>
+<div th:replace="~{fragments/services :: services}"></div>
+<div th:replace="~{fragments/dreams :: dreams}"></div>
+<div th:replace="~{fragments/better-world :: betterWorld}"></div>
+<div th:replace="~{fragments/submit-cv :: submitCv}"></div>
+<div th:replace="~{fragments/clients :: clients}"></div>
+<div th:replace="~{fragments/footer :: footer}"></div>
+
+<script th:src="@{/js/main.js}"></script>
+</body>
+</html>

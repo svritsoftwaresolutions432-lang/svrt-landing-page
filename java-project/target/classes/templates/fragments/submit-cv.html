@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<body>
+<section th:fragment="submitCv" id="jobs" class="cv-section">
+    <div class="container narrow">
+        <div class="section-header">
+            <h2 class="section-title purple">Submit your CV</h2>
+            <p class="section-desc">
+                The world is waiting for the professional people like you, submit your CV to get the latest job information and trends to improve your position.
+            </p>
+        </div>
+
+        <div th:if="${message}" class="flash-message" th:text="${message}">Success!</div>
+
+        <form th:action="@{/submit-cv}" method="post" enctype="application/x-www-form-urlencoded" class="cv-form" id="cvForm">
+            <div class="form-row">
+                <input type="text" name="firstName" placeholder="First Name" required/>
+                <input type="text" name="lastName" placeholder="Last Name"/>
+            </div>
+            <div class="form-row">
+                <input type="tel" name="phone" placeholder="Phone"/>
+                <input type="email" name="email" placeholder="Email" required/>
+            </div>
+            <div class="form-footer">
+                <label class="upload-btn">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+                    Upload your CV in PDF format only.
+                    <input type="file" accept="application/pdf" id="cvFile" name="cvFile" hidden/>
+                </label>
+                <span class="file-name" id="fileName">No file chosen.</span>
+                <button type="submit" class="btn btn-cyan">Submit your CV</button>
+            </div>
+        </form>
+    </div>
+</section>
+</body>
+</html>

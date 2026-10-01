@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<body>
+<section th:fragment="about" id="about" class="about-section">
+    <div class="container">
+        <div class="section-header">
+            <h2 class="section-title purple" th:text="${site.companyName}">SVR IT Software Solutions</h2>
+            <p class="section-desc">
+                Your trusted partner for IT staffing and consulting services across the USA and India. We specialize in providing top-tier talent and innovative solutions for all your website development needs. Our mission is to connect businesses with highly skilled IT professionals who can drive your projects to success. Whether you're a startup looking to build your first website or an established enterprise seeking to enhance your online presence, we have the expertise to deliver exceptional results.
+            </p>
+        </div>
+
+        <div class="cards-grid">
+            <div th:each="card : ${featureCards}"
+                 th:class="${card.faded} ? 'feature-card faded' : 'feature-card'">
+                <div class="feature-icon purple-icon">
+                    <svg th:switch="${card.icon}" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                        <g th:case="'pen-tool'"><path d="M12 19l7-7 3 3-7 7-3-3z"/><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"/><path d="M2 2l7.586 7.586"/><circle cx="11" cy="11" r="2"/></g>
+                        <g th:case="'clipboard'"><path d="M9 2h6a2 2 0 012 2v2h3v16H4V6h3V4a2 2 0 012-2z"/><path d="M9 12h6M9 16h4"/></g>
+                        <g th:case="'wallet'"><path d="M20 7H4a2 2 0 00-2 2v10a2 2 0 002 2h16a2 2 0 002-2V9a2 2 0 00-2-2z"/><path d="M16 14h.01M2 11h20M5 7V5a2 2 0 012-2h10a2 2 0 012 2v2"/></g>
+                    </svg>
+                </div>
+                <h3 class="card-title purple" th:text="${card.title}">Title</h3>
+                <p class="card-desc" th:text="${card.description}">Description</p>
+            </div>
+        </div>
+    </div>
+</section>
+</body>
+</html>

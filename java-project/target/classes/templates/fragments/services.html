@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<body>
+<section th:fragment="services" id="services" class="services-section">
+    <div class="container">
+        <div class="section-header">
+            <h2 class="section-title white">Our Services</h2>
+            <p class="section-desc white">
+                At SVR IT Software Solutions, we offer comprehensive staffing and recruiting services designed to meet the evolving needs of businesses across industries.
+            </p>
+        </div>
+
+        <div class="cards-grid">
+            <div th:each="card : ${serviceCards}"
+                 th:class="${card.faded} ? 'service-card faded' : 'service-card'">
+                <div class="feature-icon white-icon">
+                    <svg th:switch="${card.icon}" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                        <g th:case="'target'"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></g>
+                        <g th:case="'handshake'"><path d="M11 17l-5-5 2-2 3 3 7-7 2 2-9 9z"/><path d="M3 12l9 9 9-9"/></g>
+                        <g th:case="'headphones'"><path d="M3 18v-6a9 9 0 0118 0v6"/><path d="M21 19a2 2 0 01-2 2h-1v-6h3v4zM3 19a2 2 0 002 2h1v-6H3v4z"/></g>
+                    </svg>
+                </div>
+                <h3 class="card-title white" th:text="${card.title}">Title</h3>
+                <p class="card-desc white" th:text="${card.description}">Description</p>
+                <a href="#" class="learn-more">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                    Learn More
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+</body>
+</html>

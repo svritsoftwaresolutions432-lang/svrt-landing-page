@@ -33,12 +33,14 @@
     ring.style.strokeDashoffset = offset;
 
     let current = 0;
-    const step = Math.max(1, Math.ceil(value / 50));
+    const duration = 1200;
+    const steps = 60;
+    const step = Math.max(1, value / steps);
     const timer = setInterval(() => {
       current += step;
       if (current >= value) { current = value; clearInterval(timer); }
-      label.textContent = current + '%';
-    }, 25);
+      label.textContent = Math.round(current) + '%';
+    }, duration / steps);
   };
 
   const circleObserver = new IntersectionObserver((entries) => {

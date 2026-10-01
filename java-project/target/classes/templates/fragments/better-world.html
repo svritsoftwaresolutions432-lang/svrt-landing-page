@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<body>
+<section th:fragment="betterWorld" class="better-world">
+    <div class="container better-grid">
+        <div>
+            <h2 class="section-title white left">Better Jobs, Better World!</h2>
+            <p class="desc-light">
+                We understand that every business is unique. That's why we offer customized staffing solutions tailored to your specific requirements. Our extensive network of experienced developers, designers, and IT consultants ensures that you have access to the best talent in the industry.
+            </p>
+            <a href="#about" class="know-more">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                <span class="underline-text">Know More</span>
+            </a>
+        </div>
+        <div class="stat-grid">
+            <div th:each="stat : ${worldStats}" class="stat-box">
+                <span class="stat-value counter" th:attr="data-target=${stat.value}" th:text="${stat.value}">0+</span>
+                <p class="stat-label" th:text="${stat.label}">Label</p>
+            </div>
+        </div>
+    </div>
+</section>
+</body>
+</html>
